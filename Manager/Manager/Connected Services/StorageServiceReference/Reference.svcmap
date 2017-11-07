@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fc5055f2-4a56-4a6a-b31f-3d587f029df5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://alkesh/storage/storage.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Storage.xsd" MetadataType="Schema" ID="4cb8ff35-b7fd-482d-8980-f07ddb553321" SourceId="1" SourceUrl="http://alkesh/Storage/Storage.svc?xsd=xsd2" />
+    <MetadataFile FileName="Storage1.xsd" MetadataType="Schema" ID="c461bd87-ba05-4283-8116-059f9d019771" SourceId="1" SourceUrl="http://alkesh/Storage/Storage.svc?xsd=xsd1" />
+    <MetadataFile FileName="Storage.disco" MetadataType="Disco" ID="161185d4-fa81-43f6-935e-4dd69664083b" SourceId="1" SourceUrl="http://alkesh/Storage/Storage.svc?disco" />
+    <MetadataFile FileName="Storage.wsdl" MetadataType="Wsdl" ID="faded503-5242-4336-b92c-5e2b70a955c0" SourceId="1" SourceUrl="http://alkesh/Storage/Storage.svc?wsdl" />
+    <MetadataFile FileName="Storage2.xsd" MetadataType="Schema" ID="15f68be5-32cf-4378-8b69-a1e29665c267" SourceId="1" SourceUrl="http://alkesh/Storage/Storage.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

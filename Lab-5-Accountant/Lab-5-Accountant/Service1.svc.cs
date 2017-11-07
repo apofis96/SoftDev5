@@ -19,7 +19,8 @@ namespace Lab_5_Accountant
             [2] = 10,
             [3] = 45,
             [4] = 33,
-            [5] = 16
+            [5] = 16,
+            [6] = 17
         };
 
 
@@ -46,11 +47,11 @@ namespace Lab_5_Accountant
             {
                 if (success)
                 {
-                    writer.WriteLine(DateTime.Now + "  Товар доставлено: {0}, {1}од.", productName, quantity);
+                    writer.WriteLine(DateTime.Now + "  Товар доставлено: {0}, {1} од.", productName, quantity);
                 }
                 else
                 {
-                    writer.WriteLine(DateTime.Now + "  Доставка НЕ відбулась: {0}, {1}од.", productName, quantity);
+                    writer.WriteLine(DateTime.Now + "  Доставка НЕ відбулась: {0}, {1} од.", productName, quantity);
                 }
             }
         }

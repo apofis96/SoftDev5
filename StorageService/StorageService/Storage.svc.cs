@@ -18,7 +18,7 @@ namespace StorageService
         List<ProductInfo> AllProducts;
         List<Order> Orders;
         //counts orders
-        int counter;
+        static int counter;
         public Storage()
         {
             Orders = new List<Order>();

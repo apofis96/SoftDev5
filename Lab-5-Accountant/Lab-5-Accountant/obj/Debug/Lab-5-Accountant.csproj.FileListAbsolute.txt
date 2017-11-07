@@ -5,3 +5,10 @@ D:\PROJECTS-VisualStudio2017\ІПЗ\Lab-5-Accountant\Lab-5-Accountant\obj\Debug\
 D:\PROJECTS-VisualStudio2017\ІПЗ\Lab-5-Accountant\Lab-5-Accountant\obj\Debug\Lab-5-Accountant.csproj.CoreCompileInputs.cache
 D:\PROJECTS-VisualStudio2017\ІПЗ\Lab-5-Accountant\Lab-5-Accountant\obj\Debug\Lab-5-Accountant.dll
 D:\PROJECTS-VisualStudio2017\ІПЗ\Lab-5-Accountant\Lab-5-Accountant\obj\Debug\Lab-5-Accountant.pdb
+C:\Users\Seashell\Desktop\Универ\Инженерия ПО\Lab5\Lab-5-Accountant\Lab-5-Accountant\bin\Lab-5-Accountant.dll.config
+C:\Users\Seashell\Desktop\Универ\Инженерия ПО\Lab5\Lab-5-Accountant\Lab-5-Accountant\bin\Lab-5-Accountant.dll
+C:\Users\Seashell\Desktop\Универ\Инженерия ПО\Lab5\Lab-5-Accountant\Lab-5-Accountant\bin\Lab-5-Accountant.pdb
+C:\Users\Seashell\Desktop\Универ\Инженерия ПО\Lab5\Lab-5-Accountant\Lab-5-Accountant\obj\Debug\Lab-5-Accountant.csprojResolveAssemblyReference.cache
+C:\Users\Seashell\Desktop\Универ\Инженерия ПО\Lab5\Lab-5-Accountant\Lab-5-Accountant\obj\Debug\Lab-5-Accountant.csproj.CoreCompileInputs.cache
+C:\Users\Seashell\Desktop\Универ\Инженерия ПО\Lab5\Lab-5-Accountant\Lab-5-Accountant\obj\Debug\Lab-5-Accountant.dll
+C:\Users\Seashell\Desktop\Универ\Инженерия ПО\Lab5\Lab-5-Accountant\Lab-5-Accountant\obj\Debug\Lab-5-Accountant.pdb
