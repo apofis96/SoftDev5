@@ -10,25 +10,17 @@ namespace Manager
 {
     public class ManagerService : IManagerService
     {
-        public string GetData(int value)
-        {
-            return string.Format("You entered: {0}", value);
-        }
-
-        public Product GetDataUsingDataContract(Product composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
-        }
-
         public bool CompileOrder(string name, int amount)
+        {
+            return true;
+        }
+
+        public void RequestReceiving()
+        {
+
+        }
+
+        public void RequestDispatching(string name, int amount)
         {
 
         }

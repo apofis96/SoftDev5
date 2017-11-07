@@ -14,6 +14,10 @@ namespace Manager
         [OperationContract]
         bool CompileOrder(string name, int amount);
 
+        [OperationContract]
+        void RequestDispatching(string name, int amount);
 
+        [OperationContract]
+        void RequestReceiving();
     }
 }
