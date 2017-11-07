@@ -27,8 +27,8 @@ namespace Сourier
                 {
                     using (AccounterReference.AccountantClient account = new AccounterReference.AccountantClient())
                     {
-                        order.Price = account.GetPrice(order.ID, order.Quantity);
-                        account.LogResult(order.PoductName, order.Quantity, true);
+                        order.Price = account.GetPrice(order.ProductID, order.Quantity);
+                        account.LogResult(order.PoductName, order.Quantity, Deliver(order));
                     }
 
                 }

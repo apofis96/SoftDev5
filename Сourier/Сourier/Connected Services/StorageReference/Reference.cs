@@ -23,13 +23,16 @@ namespace Сourier.StorageReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
+        private int OrderIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PoductNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int QuantityField;
@@ -45,14 +48,14 @@ namespace Сourier.StorageReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
+        public int OrderID {
             get {
-                return this.IDField;
+                return this.OrderIDField;
             }
             set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
+                if ((this.OrderIDField.Equals(value) != true)) {
+                    this.OrderIDField = value;
+                    this.RaisePropertyChanged("OrderID");
                 }
             }
         }
@@ -79,6 +82,19 @@ namespace Сourier.StorageReference {
                 if ((this.PriceField.Equals(value) != true)) {
                     this.PriceField = value;
                     this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((this.ProductIDField.Equals(value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
                 }
             }
         }

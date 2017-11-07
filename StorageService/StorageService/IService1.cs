@@ -46,14 +46,18 @@ namespace StorageService
     [DataContract]
     public class Order
     {
-        public Order(int id, string name , int Quantity)
+        public Order(int orderid, int prodid, string name , int Quantity)
         {
-            this.ID = id;
+            this.OrderID = orderid;
+            this.ProductID = prodid;
             this.PoductName = name;
             this.Quantity = Quantity;
         }
         [DataMember]
-        public int ID { get; private set; }
+        public int OrderID { get; private set; }
+
+        [DataMember]
+        public int ProductID { get; private set; }
 
         [DataMember]
         public string PoductName { get; private set; }
