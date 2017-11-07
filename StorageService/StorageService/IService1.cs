@@ -13,31 +13,53 @@ namespace StorageService
     public interface IStorage
     {
         // TODO: Add your service operations here
+        /// <summary>
+        /// return Order by OrderId, return null if OrderId not found
+        /// </summary>
+        /// <param name="OrderId"></param>
+        /// <returns></returns>
         [OperationContract]
-        Product GetDispatchedProducts();
+        Order GetDispatchedProducts(int OrderId);
 
+        /// <summary>
+        /// return true if there is desired product in desired quantity
+        /// </summary>
+        /// <param name="ProductName"></param>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
         [OperationContract]
-        bool IsAvailable(int ProductID, int quantity);
+        bool IsAvailable(string ProductName, int quantity);
 
+        /// <summary>
+        /// Dispatches desired product in desired quantity so new order can be tacken using "GetDispatchedProducts".
+        /// OrderId -1 is returned when order cannot be placed (product not found, quantity too gig) 
+        /// </summary>
+        /// <param name="ProductName"></param>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
         [OperationContract]
-        bool Dispatch(int ProductID, int quantity);
+        int Dispatch(string ProductName, int quantity);
     }
 
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     [DataContract]
-    public class Product
+    public class Order
     {
-        public Product(int id, string name)
+        public Order(int id, string name , int Quantity)
         {
             this.ID = id;
-            this.Name = name;
+            this.PoductName = name;
+            this.Quantity = Quantity;
         }
         [DataMember]
         public int ID { get; private set; }
 
         [DataMember]
-        public string Name { get; private set; }
+        public string PoductName { get; private set; }
+
+        [DataMember]
+        public int Quantity { get; private set; }
 
         [DataMember]
         public int Price { get; set; }

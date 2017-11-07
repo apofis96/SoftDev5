@@ -15,53 +15,55 @@ namespace StorageService
         InstanceContextMode = InstanceContextMode.Single)]
     public class Storage : IStorage
     {
-        Product ProductToDispatch;
         List<ProductInfo> AllProducts;
+        List<Order> Orders;
+        //counts orders
+        int counter;
         public Storage()
         {
+            Orders = new List<Order>();
             AllProducts = new List<ProductInfo>()
-            {new ProductInfo(){ Id = 1, Name="Product1", Quantity= 39 },
-            new ProductInfo(){ Id = 1, Name="Product2", Quantity= 88 },
-            new ProductInfo(){ Id = 1, Name="Product3", Quantity= 140 },
-            new ProductInfo(){ Id = 1, Name="Product4", Quantity= 15 },
-            new ProductInfo(){ Id = 1, Name="Product5", Quantity= 74 },
-            new ProductInfo(){ Id = 1, Name="Product6", Quantity= 22 } };
-            ProductToDispatch = null;
+            {new ProductInfo(){ Name="Product1", Quantity= 39 },
+            new ProductInfo(){  Name="Product2", Quantity= 88 },
+            new ProductInfo(){  Name="Product3", Quantity= 140 },
+            new ProductInfo(){  Name="Product4", Quantity= 15 },
+            new ProductInfo(){  Name="Product5", Quantity= 74 },
+            new ProductInfo(){  Name="Product6", Quantity= 22 } };
         }
         //Check if desired amount of products ARE
-        public bool IsAvailable(int ProductID, int quantity)
+        public bool IsAvailable(string ProductName, int quantity)
         {
-           ProductInfo p =  AllProducts.Where(t => t.Id == ProductID).FirstOrDefault();
+           ProductInfo p =  AllProducts.Where(t => t.Name == ProductName).FirstOrDefault();
             if (p != null && p.Quantity >= quantity)
                 return true;
             return false;
         }
         // return true if Products was successfully Dispatched, otherwise false.
         // Product dispatched means that it can be taken using "GetDispatchedProduct" method
-        public bool Dispatch(int ProductID, int quantity)
+        public int Dispatch(string ProductName, int quantity)
         {
-            if (IsAvailable(ProductID, quantity))
+            if (IsAvailable(ProductName, quantity))
             {
-                ProductInfo pinf = AllProducts.Where(t => t.Id == ProductID).FirstOrDefault();
-                Product p = new Product(pinf.Id, pinf.Name);
-                p.Price = 0;
-                pinf.Quantity--;
-                ProductToDispatch = p;
-                return true;
+                ProductInfo pinf = AllProducts.Where(t => t.Name == ProductName).FirstOrDefault();
+                Order o = new Order(counter++, pinf.Name, quantity);
+                o.Price = 0;
+                pinf.Quantity-= quantity;
+                Orders.Add(o);
+                return o.ID;
             }
-            return false;
+            return -1;
         }
-        //return Product, only with Product name, quantity and id
-        public Product GetDispatchedProducts()
+        //return Order, only with Product name, quantity and id; return null if product not found
+        public Order GetDispatchedProducts(int OrderId)
         {
-            Product c = ProductToDispatch;
-            ProductToDispatch = null;
-            return c;
+            Order o = Orders.Find(or => or.ID == OrderId);
+            if (o != null)
+                Orders.Remove(o);
+            return o;
         }
     }
     class ProductInfo
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
     }
