@@ -1,7 +1,0 @@
-C:\Users\Apofis\Desktop\SoftWAR\SoftDev5\Сourier\Сourier\bin\Сourier.dll.config
-C:\Users\Apofis\Desktop\SoftWAR\SoftDev5\Сourier\Сourier\bin\Сourier.dll
-C:\Users\Apofis\Desktop\SoftWAR\SoftDev5\Сourier\Сourier\bin\Сourier.pdb
-C:\Users\Apofis\Desktop\SoftWAR\SoftDev5\Сourier\Сourier\obj\Debug\Сourier.csprojResolveAssemblyReference.cache
-C:\Users\Apofis\Desktop\SoftWAR\SoftDev5\Сourier\Сourier\obj\Debug\Сourier.csproj.CoreCompileInputs.cache
-C:\Users\Apofis\Desktop\SoftWAR\SoftDev5\Сourier\Сourier\obj\Debug\Сourier.dll
-C:\Users\Apofis\Desktop\SoftWAR\SoftDev5\Сourier\Сourier\obj\Debug\Сourier.pdb

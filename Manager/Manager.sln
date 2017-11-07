@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Сourier", "Сourier\Сourier.csproj", "{58DDB19E-ACD4-4EAA-B014-80D7768E3A05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manager", "Manager\Manager.csproj", "{F43CDA21-4CDD-4C6C-A1F1-78EAD11CAD86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{58DDB19E-ACD4-4EAA-B014-80D7768E3A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58DDB19E-ACD4-4EAA-B014-80D7768E3A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58DDB19E-ACD4-4EAA-B014-80D7768E3A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58DDB19E-ACD4-4EAA-B014-80D7768E3A05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F43CDA21-4CDD-4C6C-A1F1-78EAD11CAD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F43CDA21-4CDD-4C6C-A1F1-78EAD11CAD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F43CDA21-4CDD-4C6C-A1F1-78EAD11CAD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F43CDA21-4CDD-4C6C-A1F1-78EAD11CAD86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BB1B7043-06BD-4692-BA53-78E3289AC412}
+		SolutionGuid = {CC751A35-6126-4CC3-AC7B-AA7F8941FA42}
 	EndGlobalSection
 EndGlobal
