@@ -23,12 +23,12 @@ namespace StorageService
         {
             Orders = new List<Order>();
             AllProducts = new List<ProductInfo>()
-            {new ProductInfo(){ Name="Product1", Quantity= 39 },
-            new ProductInfo(){  Name="Product2", Quantity= 88 },
-            new ProductInfo(){  Name="Product3", Quantity= 140 },
-            new ProductInfo(){  Name="Product4", Quantity= 15 },
-            new ProductInfo(){  Name="Product5", Quantity= 74 },
-            new ProductInfo(){  Name="Product6", Quantity= 22 } };
+            {new ProductInfo(){ Name="Product1", ID = 1, Quantity= 39 },
+            new ProductInfo(){  Name="Product2", ID = 2, Quantity= 88 },
+            new ProductInfo(){  Name="Product3", ID = 3, Quantity= 140 },
+            new ProductInfo(){  Name="Product4", ID = 4, Quantity= 15 },
+            new ProductInfo(){  Name="Product5", ID = 5, Quantity= 74 },
+            new ProductInfo(){  Name="Product6", ID = 6, Quantity= 22 } };
         }
         //Check if desired amount of products ARE
         public bool IsAvailable(string ProductName, int quantity)
@@ -45,18 +45,18 @@ namespace StorageService
             if (IsAvailable(ProductName, quantity))
             {
                 ProductInfo pinf = AllProducts.Where(t => t.Name == ProductName).FirstOrDefault();
-                Order o = new Order(counter++, pinf.Name, quantity);
+                Order o = new Order(counter++, pinf.ID, pinf.Name, quantity);
                 o.Price = 0;
                 pinf.Quantity-= quantity;
                 Orders.Add(o);
-                return o.ID;
+                return o.OrderID;
             }
             return -1;
         }
         //return Order, only with Product name, quantity and id; return null if product not found
         public Order GetDispatchedProducts(int OrderId)
         {
-            Order o = Orders.Find(or => or.ID == OrderId);
+            Order o = Orders.Find(or => or.OrderID == OrderId);
             if (o != null)
                 Orders.Remove(o);
             return o;
@@ -65,6 +65,8 @@ namespace StorageService
     class ProductInfo
     {
         public string Name { get; set; }
+
+        public int ID { get; set; }
         public int Quantity { get; set; }
     }
 }

@@ -8,27 +8,17 @@ using System.Text;
 
 namespace Сourier
 {
-    // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени интерфейса "IService1" в коде и файле конфигурации.
     [ServiceContract]
+    // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени интерфейса "IService1" в коде и файле конфигурации.
     public interface ICourier
     {
 
-        [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
 
         [OperationContract]
         void TakeGoods(int id);
 
-
-
         [OperationContract]
-        int DeliverGoods();
-
-        [OperationContract]
-        void SuccessOfDeliver(int id, bool flag);
+        void TestConnect(string str);
 
         // TODO: Добавьте здесь операции служб
     }
@@ -36,23 +26,24 @@ namespace Сourier
 
     // Используйте контракт данных, как показано в примере ниже, чтобы добавить составные типы к операциям служб.
     [DataContract]
-    public class CompositeType
+    public class Order
     {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+        public Order(int id, string name, int Quantity)
+        {
+            this.ID = id;
+            this.PoductName = name;
+            this.Quantity = Quantity;
+        }
+        [DataMember]
+        public int ID { get; private set; }
 
         [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
+        public string PoductName { get; private set; }
 
         [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        public int Quantity { get; private set; }
+
+        [DataMember]
+        public int Price { get; set; }
     }
 }
