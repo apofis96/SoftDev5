@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -15,6 +16,7 @@ namespace StorageService
         InstanceContextMode = InstanceContextMode.Single)]
     public class Storage : IStorage
     {
+        string path = @"C:\Logs2\Storage.log";
         List<ProductInfo> AllProducts;
         List<Order> Orders;
         //counts orders
@@ -49,6 +51,7 @@ namespace StorageService
                 o.Price = 0;
                 pinf.Quantity-= quantity;
                 Orders.Add(o);
+                LogPrepared(o.PoductName, o.Quantity, o.OrderID);
                 return o.OrderID;
             }
             return -1;
@@ -58,14 +61,39 @@ namespace StorageService
         {
             Order o = Orders.Find(or => or.OrderID == OrderId);
             if (o != null)
+            {
                 Orders.Remove(o);
+                LogGiveDispatchedProducts(o.PoductName, o.Quantity, o.OrderID);
+            }
             return o;
+        }
+
+        public void LogPrepared(string name, int amount, int id)
+        {
+            if (!File.Exists(path))
+            {
+                using (FileStream fs = File.Create(path)) { }
+            }
+            using (StreamWriter log = new StreamWriter(new FileStream(path, FileMode.Append)))
+            {
+                log.WriteLine($"{DateTime.Now} : Prepared products #{id} ({name}, {amount} pieces) ");
+            }
+        }
+        public void LogGiveDispatchedProducts(string name, int amount, int id)
+        {
+            if (!File.Exists(path))
+            {
+                using (FileStream fs = File.Create(path)) { }
+            }
+            using (StreamWriter log = new StreamWriter(new FileStream(path, FileMode.Append)))
+            {
+                log.WriteLine($"{DateTime.Now} : Departed Products #{id} ({name}, {amount} pieces)");
+            }
         }
     }
     class ProductInfo
     {
         public string Name { get; set; }
-
         public int ID { get; set; }
         public int Quantity { get; set; }
     }
