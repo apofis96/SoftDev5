@@ -9,9 +9,13 @@ using System.Text;
 
 namespace Lab_5_Accountant
 {
- 
+     [ServiceBehavior(
+    ConcurrencyMode = ConcurrencyMode.Single,
+        InstanceContextMode = InstanceContextMode.Single)]
     public class AccountantService : IAccountant
     {
+        int money = 0;
+
         //ціна за одиницю товару
         Dictionary<int, int> priceList = new Dictionary<int, int>
         {
@@ -30,12 +34,20 @@ namespace Lab_5_Accountant
         {
             if (priceList.ContainsKey(productID))
                 return priceList[productID] * quantity;
-            return 0;//если переданого id в прайслисте нет, можно возвращать, например, 0
+            return 0;
         }
 
 
         //звіт про результат доставки
-        public void LogResult(string productName, int quantity, bool success)
+        public void LogResult(int orderID, int price, string productName, int quantity, bool success)
+        {
+            money += price;
+            Log(orderID, price, productName, quantity, success);
+        }
+
+
+
+        private void Log(int orderID, int price, string productName, int quantity, bool success)
         {
             string fileName = "Report.log";
             string directory = @"C:\Logs";
@@ -47,11 +59,11 @@ namespace Lab_5_Accountant
             {
                 if (success)
                 {
-                    writer.WriteLine(DateTime.Now + "  Товар доставлено: {0}, {1} од.", productName, quantity);
+                    writer.WriteLine(DateTime.Now + "  Замовлення id={0}, Товар доставлено: {1}, {2} од., ціна - {3} грн., Всього зароблено грошей: {4}", orderID, productName, quantity, price, money);
                 }
                 else
                 {
-                    writer.WriteLine(DateTime.Now + "  Доставка НЕ відбулась: {0}, {1} од.", productName, quantity);
+                    writer.WriteLine(DateTime.Now + "  Замовлення id={0}, Доставка НЕ відбулась: {1}, {2} од., ціна - {3} грн.", orderID, productName, quantity, price);
                 }
             }
         }

@@ -17,7 +17,7 @@ namespace Lab_5_Accountant
         int GetPrice(int productID, int quantity);
 
         [OperationContract]
-        void LogResult(string productName, int quantity, bool success);
+        void LogResult(int orderID, int price, string productName, int quantity, bool success);
 
     }
 
